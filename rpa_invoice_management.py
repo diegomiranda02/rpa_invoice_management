@@ -36,14 +36,24 @@ pyautogui.keyDown('alt')
 pyautogui.press('tab', presses = 2)
 pyautogui.keyUp('alt')
 
-# Wait the user input the document number
+# Wait the user input the document number and password
 documentNumber = input("Digite o numero do CPF/CNPJ/Matricula: ")
 print("Voce digitou " + documentNumber)
 
 documentNumberConfirm = input("O numero esta correto? Sim ou Nao? ")
 
 if documentNumberConfirm[0] == 'S':
-    print("Retornando para o site para informar o numero do documento!")
+    print("Numero do documento gravado :" + documentNumber)
 elif documentNumberConfirm[0] == 'N':
     print("Programa finalizado.")
+    exit()
+
+# Return to the website to inform the document number
+pyautogui.keyDown('alt')
+pyautogui.press('tab', presses = 2)
+pyautogui.keyUp('alt')
+
+# Type the documento number
+pyautogui.write(documentNumber)
+pyautogui.press("tab")
 

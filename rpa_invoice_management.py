@@ -35,3 +35,15 @@ pyautogui.press("tab", presses = 21)
 pyautogui.keyDown('alt')
 pyautogui.press('tab', presses = 2)
 pyautogui.keyUp('alt')
+
+# Wait the user input the document number
+documentNumber = input("Digite o numero do CPF/CNPJ/Matricula: ")
+print("Voce digitou " + documentNumber)
+
+documentNumberConfirm = input("O numero esta correto? Sim ou Nao? ")
+
+if documentNumberConfirm[0] == 'S':
+    print("Retornando para o site para informar o numero do documento!")
+elif documentNumberConfirm[0] == 'N':
+    print("Programa finalizado.")
+
